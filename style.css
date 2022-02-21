@@ -59,6 +59,9 @@ nav a:hover {
     width: 50%;
 }
 
+#me{
+    float: left;
+}
 h1{
     text-align: center;
     font-size: 40px;
