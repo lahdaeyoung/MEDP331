@@ -1,0 +1,37 @@
+body {
+    background: #fff;
+    color: #aaa;
+    margin: 32pt 0 0 18pt;
+    font-family: Optima, sans-serif;
+    font-size: 14pt;
+}
+
+a {
+    color: #117;
+    text-decoration: none;
+}
+
+#main {
+    width: 70%;
+}
+
+#main div {
+    font-weight: bold;
+    padding-bottom: 21px;
+}
+
+#info {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    color: #333;
+    background: #aaa;
+    margin-left: 6px;
+    border-left: thin #000 solid;
+    border-bottom: thin #000 solid;
+    padding: 9px;
+    font-size: 80%
+}
