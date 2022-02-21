@@ -7,11 +7,50 @@ body {
 }
 
 header{
-    background: #427ea1;
+    background: #4f819e;
 }
 
 .container {
     width: 88%;
+}
+
+#back{
+    padding: 10px 0;
+    float: left;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+nav{
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 50px;
+    padding-top: 25px;
+}
+
+nav a {
+    color: #dba484;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+nav a:hover {
+    color:#2d5369
 }
 
 #intro {
