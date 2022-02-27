@@ -79,10 +79,12 @@ function rand_range(maximum) {
     "use strict";
     return Math.floor(Math.random() * (maximum + 1));
 }
+
 function choose(array) {
     "use strict";
     return array[rand_range(array.length - 1)];
 }
+
 function stanza() {
     "use strict";
     return ' HE RISES FROM HIS ' + choose(adjectives) + 'BED' + 
@@ -90,6 +92,7 @@ function stanza() {
     '<br \>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HE EATS HIS ' + choose(food) + 'WITH LOTS OF BREAD' + 
     '<br \>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + choose(feeling) + 'FOR THE DAY AHEAD';
 }
+
 function litany() {
     "use strict";
     var last, text, main = document.getElementById('main');
