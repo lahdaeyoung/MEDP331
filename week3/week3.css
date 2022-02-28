@@ -1,4 +1,5 @@
 body {
+    text-align: center;
     background: #9B646F;
     color: #6F9B64;
     margin: 32pt 0 0 18pt;
@@ -26,6 +27,7 @@ h2 {
 
 #main {
     width: 70%;
+    text-align: center;
 }
 
 #main div {
