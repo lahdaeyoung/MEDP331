@@ -1,3 +1,4 @@
+
 var t = 0,
 adjective = ['TIDY',
     'TERRIFIC',
