@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="week3.css">
-    
+
     <title>Week 3- The King's Morning</title>
 </head>
 
@@ -18,7 +18,7 @@
 
     <script>
         let y = 200;
-        let speed =1;
+        let speed = 1;
         function setup() {
             createCanvas(400, 400);
         }
@@ -27,11 +27,11 @@
             background("#9B646F");
             fill("#6F9B64");
             noStroke();
-            ellipse(200, y+20, 250, 250);
+            ellipse(200, y + 20, 250, 250);
             ellipse(200, y, 250, 250);
             y += speed;
-            if (y >= 400 || y <= 0) { // once the ellipse has reached either side of the canvas...
-                speed *= -1; // ...reverse its direction of movement
+            if (y >= 400 || y <= 0) {
+                speed *= -1;
             }
         }
     </script>
