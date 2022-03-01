@@ -1,4 +1,4 @@
-<script> 
+<script>
     let y = 200;
     let speed = 1;
     function setup() {
@@ -30,10 +30,30 @@
     function setup() {
         bg = loadImage('img/kingsbed.png');
         createCanvas(800, 500);
-        
+
     }
-    
+
     function draw() {
         background(bg);
+    }
+</script>
+
+<script>
+    let img
+
+    function preload() {
+        img = loadImage('img/crown.png')
+    }
+
+    function setup() {
+        createCanvas(1920, 1080);
+        imageMode(CENTER)
+        noCursor()
+    }
+
+    function draw() {
+        background(155, 100, 111);
+        image(img, mouseX, mouseY)
+        img.resize(80, 65);
     }
 </script>
