@@ -46,5 +46,13 @@ h2 {
     margin-left: auto;
     margin-right: auto;
     width: 30%;
-    position:fixed ;
+    position: fixed ;
 }
+
+#sun{
+    position: fixed;
+    width: 30%;
+    height: auto;
+    top: -100px ;
+    right:-150px;
+} 
