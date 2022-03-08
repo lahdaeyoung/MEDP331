@@ -37,10 +37,9 @@ function selectVideo() {
     case ("age"):
       media.src = "vid/curbyourage.mp4"
       break;
+      default:
     case ("racism"):
       media.src = "vid/curbyourracism.mp4"
-      break;
-    default:
       break;
   }
 }
