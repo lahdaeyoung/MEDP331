@@ -1,59 +1,99 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <script src="utility.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="week4.css">
-    <title> Lah's Media Player </title>
-  </head>
-  <body>
-    <main>
-      <h1 id="title">Lah's Media Player</h1>
-      <section> <div>
-  <p>
-  Want to go wacky mode? <input type="text" id="wackyMode"><button onclick="goWackyMode()">Submit</button>
-      <p id="wronganswer"></p>
-  <p>
-  <p>
-  <h3>What type of video do you want to play?</h3>
-  <select name="video" id="video-select">
-    <option value="funny">Funny</option>
-    <option value="trippy">Trippy</option>
-  </select>
-  <button onclick="selectVideo()">Select</button>
-  </p>
-        <div class="player">
-          <video controls loop>
-            <source src="videos/unusual_instrument.mp4" type="video/mp4">
-            <!-- fallback content here -->
-          </video>
-          <div class="controls">
-  <div>
-  <p>
 
-  </div>
-    Number: <input type="number" id="valueText">
-  </p>
-  <p>
-    <button id="play" onclick="playPauseMedia()">Play/Pause</button>
-  </p>
- <p>
-    <button onclick="addToModifier();">Add to playback speed</button>
-    <button onclick="subtractModifier()">Subtract from playback speed</button>
-    <button onclick="multiplyModifier()">Multiply playback speed</button>
-    <button onclick="divideModifier()">Divide Playback speed</button>
-  </p>
-  <p id="playbackSpeed">
-    Playback speed is 1
-  </p>
-  <p>
-    <button onclick="zeroModifier();">Reset Modifier</button>
-  </p>
-          </div>
-        </div>
+    <title>Week 3- The King's Morning</title>
+</head>
 
-      </section>
-    </main>
-<button id="backgroundchange">Change Background Color!</button>
+<body onload="produce_litany();" data-new-gr-c-s-check-loaded="14.1050.0" data-gr-ext-installed="">
+    <h1>The King's Morning </h1>
+    <h2>by Andrew Lah</h2><br>
+    <button id="backgroundcolor">change background color</button>
+    <img id="bed" src="img/kingsbed.png">
+    <img id="sun" src="img/sun.png">
+    <div id="main">
+
+    </div>
+
+
+    <script>
+
+        // this class describes the properties of a single particle.
+        class Particle {
+            // setting the co-ordinates, radius and the
+            // speed of a particle in both the co-ordinates axes.
+            constructor() {
+                this.x = random(0, width);
+                this.y = random(0, height);
+                this.r = random(1, 4);
+                this.xSpeed = random(-.2, .2);
+                this.ySpeed = random(-.2, .2);
+            }
+
+            // creation of a particle.
+            createParticle() {
+                noStroke();
+                fill('rgba(155, 100, 111)');
+                circle(this.x, this.y, this.r);
+            }
+
+            // setting the particle in motion.
+            moveParticle() {
+                if (this.x < 0 || this.x > width)
+                    this.xSpeed *= -1;
+                if (this.y < 0 || this.y > height)
+                    this.ySpeed *= -1;
+                this.x += this.xSpeed;
+                this.y += this.ySpeed;
+            }
+
+            // this function creates the connections(lines)
+            // between particles which are less than a certain distance apart
+            joinParticles(particles) {
+                particles.forEach(element => {
+                    let dis = dist(this.x, this.y, element.x, element.y);
+                    if (dis < 85) {
+                        noStroke();
+                        line(this.x, this.y, element.x, element.y);
+                    }
+                });
+            }
+        }
+
+        // an array to add multiple particles
+        let img
+        let particles = [];
+
+        function preload() {
+            img = loadImage('img/crown.png')
+        }
+
+        function setup() {
+            createCanvas(1920, 1080);
+            imageMode(CENTER)
+            noCursor();
+            for (let i = 0; i < width / 10; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function draw() {
+            shimmer.style.backgroundColor = 'transparent'; 
+            image(img, mouseX, mouseY)
+            img.resize(80, 65);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].createParticle();
+                particles[i].moveParticle();
+                particles[i].joinParticles(particles.slice(i));
+            }
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
     <script src="week4.js"></script>
-  </body>
+</body>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
 </html>
