@@ -88,10 +88,10 @@ function selectVideo() {
 
   switch(preference) {
     case ("funny"):
-      media.src = "vid/.mp4"
+      media.src = "vid/curbyourage.mp4"
       break;
     case ("trippy"):
-      media.src = "vid/.mp4"
+      media.src = "vid/curbyourracism.mp4"
       break;
     default:
       break;
