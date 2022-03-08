@@ -1,16 +1,6 @@
 //Global variables
 const media = document.querySelector('video') // this just gets the video element
 let playbackSpeed = 1 // Global variable to hold the playbackSpeed
-const btn = document.getElementById('backgroundchange');
-
-function random(number) {
-  return Math.floor(Math.random() * (number+1));
-}
-
-btn.addEventListener('click', () => {
-  const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-  document.body.style.backgroundColor = rndCol;
-});
 
 function getModifier() {
   let valueElement = O("valueText")
@@ -87,11 +77,11 @@ function selectVideo() {
   let preference = selectVideo.value
 
   switch(preference) {
-    case ("age"):
-      media.src = "vid/curbyourage.mp4"
+    case ("funny"):
+      media.src = "videos/gopher.mp4"
       break;
-    case ("racism"):
-      media.src = "vid/curbyourracism.mp4"
+    case ("trippy"):
+      media.src = "videos/milkdrop.mp4"
       break;
     default:
       break;
