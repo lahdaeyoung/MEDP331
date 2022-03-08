@@ -87,10 +87,10 @@ function selectVideo() {
   let preference = selectVideo.value
 
   switch(preference) {
-    case ("funny"):
+    case ("age"):
       media.src = "vid/curbyourage.mp4"
       break;
-    case ("trippy"):
+    case ("racism"):
       media.src = "vid/curbyourracism.mp4"
       break;
     default:
