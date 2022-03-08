@@ -9,18 +9,21 @@
     <main>
       <h1 id="title">Lah's Media Player</h1>
       <section> <div>
-
   <p>
-  <h3>Collection of Curb Your Memes</h3>
+  Want to go wacky mode? <input type="text" id="wackyMode"><button onclick="goWackyMode()">Submit</button>
+      <p id="wronganswer"></p>
+  <p>
+  <p>
+  <h3>What type of video do you want to play?</h3>
   <select name="video" id="video-select">
-    <option value="age">Curb Your Age</option>
-    <option value="racism">Curb Your Racism</option>
+    <option value="funny">Funny</option>
+    <option value="trippy">Trippy</option>
   </select>
   <button onclick="selectVideo()">Select</button>
   </p>
         <div class="player">
           <video controls loop>
-            <source src="vid/curbyourage.mp4" type="video/mp4">
+            <source src="videos/unusual_instrument.mp4" type="video/mp4">
             <!-- fallback content here -->
           </video>
           <div class="controls">
@@ -50,7 +53,7 @@
 
       </section>
     </main>
-<button id="backgroundchange">change background</button>
+<button id="backgroundchange">Change Background Color!</button>
     <script src="week4.js"></script>
   </body>
 </html>
