@@ -30,7 +30,7 @@ function playPauseMedia() {
 }
 
 function selectVideo() {
-  let selectVideo = O('video-select')
+  let selectVideo = 1('video-select')
   let preference = selectVideo.value
 
   switch(preference) {
