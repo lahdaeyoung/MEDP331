@@ -21,45 +21,6 @@ function getModifier() {
   return value
 }
 
-    /* This function reads the value from the valueText element
-       and adds it to the global playback speed value */
-function addToModifier() {
-  let value = getModifier()
-  playbackSpeed = playbackSpeed + value // update the global playback speed value
-  //or we can shorthand this to an assignment operator
-  //playbackSpeed += value
-  // Set the playback speed
-  media.playbackRate = playbackSpeed
-  // Display the updated playback speed
-  let resultElement = O("playbackSpeed")
-  let resultString = "Playback speed is " + playbackSpeed
-  resultElement.innerText = resultString
-}
-function subtractModifier() {
-  let value = getModifier()
-  playbackSpeed = playbackSpeed - value // update the global playback speed value
-  //or we can shorthand this
-  //playbackSpeed -= value
-  // Set the playback speed
-  media.playbackRate = playbackSpeed
-  // Display the updated playback Speed
-  let resultElement = O("playbackSpeed")
-  let resultString = "Playback speed is " + playbackSpeed
-  resultElement.innerText = resultString
-}
-
-  /* This function clears the modifier value and updates the display
-  */
-function zeroModifier() {
-  playbackSpeed = 1; // set the global modifier to 0
-  // Set the playback speed
-  media.playbackRate = playbackSpeed
-
-  // update the display
-  let resultElement = O("playbackSpeed")
-  resultElement.innerText = "Playback speed is 1"
-}
-
 function playPauseMedia() {
   if(media.paused) {
     media.play();
