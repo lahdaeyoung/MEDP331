@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background: rgb(155, 100, 111);
+    background: #9b646f;
     color: #6F9B64;
     -webkit-text-stroke: 1px #3f5839;
     margin: 32pt 0 0 18pt;
@@ -26,6 +26,21 @@ h1 sub {
 
 h2 {
     font-style: italic;
+}
+
+button {
+    text-transform: uppercase;
+    border:#3f5839;
+    border-radius: 30px;
+    padding: 14px 18px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-top: 22%;
+    margin-right: auto;
+    width: 30%;
+    position: fixed ;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
 #main {
