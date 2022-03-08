@@ -68,16 +68,30 @@ function playPauseMedia() {
   }
 }
 
+function goWackyMode() {
+  let input = O('wackyMode')
+  let answer = input.value
+  if (answer.toLowerCase() == 'yes') {
+    media.playbackRate = 1.5
+  } else if (answer.toLowerCase() == 'no') {
+    media.playbackRate = 1
+  } else {
+    let wrongAnswer = O('wronganswer')
+    wrongAnswer.innerText = "I'm gonna need a yes or no answer, pal"
+  }
+  input.value = ''
+}
+
 function selectVideo() {
   let selectVideo = O('video-select')
   let preference = selectVideo.value
 
   switch(preference) {
-    case ("age"):
-      media.src = "vid/curbyourage.mp4"
+    case ("funny"):
+      media.src = "vid/.mp4"
       break;
-    case ("racism"):
-      media.src = "vid/curbyourracism.mp4"
+    case ("trippy"):
+      media.src = "vid/.mp4"
       break;
     default:
       break;
