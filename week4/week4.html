@@ -11,7 +11,12 @@
     <h1>The King's Morning </h1>
     <h2>by Andrew Lah</h2><br>
     <button id="backgroundcolor">change background color</button>
-    <img id="bed" src="img/kingsbed.png">
+    <button>show bed</button>
+
+    <div class="hidden">
+        <img id="bed" src="img/kingsbed.png">
+    </div>
+    
     <img id="sun" src="img/sun.png">
     <div id="main">
 
@@ -80,7 +85,7 @@
         }
 
         function draw() {
-            shimmer.style.backgroundColor = 'transparent'; 
+            shimmer.style.backgroundColor = 'transparent';
             image(img, mouseX, mouseY)
             img.resize(80, 65);
             for (let i = 0; i < particles.length; i++) {
@@ -89,7 +94,7 @@
                 particles[i].joinParticles(particles.slice(i));
             }
         }
-        
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
     <script src="week4.js"></script>
