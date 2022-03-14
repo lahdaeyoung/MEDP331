@@ -1,3 +1,3 @@
 $("#click-me").click(function() {
-    $("#result").html("<div>Image not loaded yet :(</div>")
+    $("#result").text("No Image :(")
 })
