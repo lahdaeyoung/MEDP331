@@ -12,13 +12,53 @@
 </head>
 
 <body>
+    
+    <h1>Image Gallery</h1>
+    <center>
+    <button id="disappear">
+        Make me disappear
+    </button>
+    <button id="reappear">
+        Make me reappear
+    </button>
+    <button id="grey">
+        Turn me Grey
+    </button>
+    <button id="shuffle">
+        Shuffle Image
+    </button>
+    <button id="save">
+        Save Image
+    </button>
 
-    <h1>Random Image Generator</h1>
+    <img id="img" src="https://picsum.photos/800"></center>
 
-    <button id="click-me">Click Here for Random Image</button>
-    <p id="result"></p>
+    <script>
+        $("#disappear").click(function () {
+            $("#img").fadeOut("slow", function () {
+            });
+        });
 
-    <script src="week5.js"></script>
+        $("#reappear").click(function () {
+            $("#img").fadeIn("slow", function () {
+            });
+        });
+
+        $("#grey").click(function () {
+            $("#img").addClass('grayscale', function () {
+            });
+        });
+
+        $("#shuffle").click(function () {
+            $("#img").fadeIn("slow", function () {
+            });
+        });
+
+        $("#save").click(function () {
+            $("#img").fadeIn("slow", function () {
+            });
+        });
+    </script>
 </body>
 
 </html>
