@@ -1,4 +1,3 @@
-$.get( "https://picsum.photos/400", function( data ) {
-    $( ".result" ).html( data );
-    alert( "Load was performed." );
-  });
+$("#click-me").click(function() {
+    $("#result").html("<div>Image not loaded yet :(</div>")
+})
