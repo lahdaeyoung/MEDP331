@@ -14,7 +14,8 @@
 <body>
 
     <h1>Image Gallery</h1>
-    <center>
+    <div id="container">
+
         <button id="disappear">
             Make me disappear
         </button>
@@ -30,9 +31,9 @@
         <button id="save">
             Save Image
         </button>
-
-        <img id="img" src="https://picsum.photos/800">
-    </center>
+    </div>
+    
+        <center><img id="img" src="https://picsum.photos/800"></center>
 
     <script>
         $("#disappear").click(function () {
