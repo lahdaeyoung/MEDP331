@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Homework 12</title>
+  <style>
+  img{
+    height: 300px;
+    width: auto;
+    position: relative;
+  }
+    h1{
+      font-family: Arial, sans-serif;
+      text-align: center;
+      width: 100px;
+      padding: 10px;
+      margin: auto;
+      border-radius: 12px;
+      background: #9E609F;
+      color: #44BBA5;
+    }
+    body{
+      background:#619F60
+    }
+    .wrapper{
+  position: relative;
+  top: 10vh;
+}
+#button{
+  border: 5px solid #B180B2;
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+  font-size: 30px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  margin: auto;
+  background: #9E609F;
+  color: #44BBA5;
+  border-radius: 12px;
+}
+
+#button:hover{
+  font-family: Arial, sans-serif;
+  background: #B180B2;
+}
+
+#message{
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #9E609F;
+}
+
+.hide{
+  visibility: hidden;
+}
+
+.reveal{
+  visibility: visible;
+}
+  </style>
+
+</head>
+<body>
+  <h1>Ghost</h1>
+    
+<div class="wrapper">
+  <div id="message" class="hide">
+    <img src="img/ghost.png">
+  </div>
+  <div id="button">
+    Click me
+  </div>
+</div>
+  
+  <script>
+    let button = document.querySelector('#button');
+    let msg = document.querySelector('#message');
+
+    button.addEventListener('click', ()=>{
+    msg.classList.toggle('reveal');
+})
+
+  </script>
+
+</body>
+</html>

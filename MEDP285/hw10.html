@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<style type="text/css">
+
+body {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	background-image: url(img/cityspiderman.jpg);
+	background-repeat: no-repeat, repeat;
+	background-position: center;
+	background-size: cover;
+	width:100vw;
+	height: 100vh;
+}
+
+.quote {
+	font-family: sans-serif;
+	font-size: large;
+	color: #D1AB2E;
+}
+
+@keyframes example1 {
+	0% {left: 0px;}
+	100% {left: 1200px;}
+}
+
+.miles{
+	position: relative;
+	animation-name: example1;
+	animation-duration: 15s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in;
+}
+
+.miles:active {
+    transform: translateY(50px);
+    transition: transform 250ms;
+}
+
+.miles img {
+	width:10%;
+	height:5%;
+}
+
+</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Interactive Animations</title>
+</head>
+<body>
+<a href="index.html"><b>BACK</b></a><br>
+<div class="quote">
+<center><p>"It's a leap of faith. That's all it is, Miles. A leap of faith."</p></center><br>
+<center><p>- Peter Parker</p></center>
+</div>
+<div class="miles">
+	<img src="img/miles.png">
+</div>
+
+
+<script type="text/javascript" src="js/hw10.js"></script>
+</body>
+</html>

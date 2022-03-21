@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	
+body {
+  margin: 40px;
+}
+
+.box {
+  background-color: #96E5FF;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+
+.box:nth-child(even) {
+  background-color: #38798F;
+  color: #000;
+}
+
+  .wrapper {
+    width: 1200px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 100px);
+  }
+    
+	</style>
+</head>
+<body>
+
+ <div class="wrapper">
+  <div id="1box" class="box box1">Hello World :D~</div>
+  <div id="2box" class="box box2">2</div>
+  <div id="3box" class="box">Woohoo! I love to code! #javascript</div>
+  <div id="4box" class="box">4</div>
+  <div id="5box" class="box">5</div>
+  <div id="6box" class="box">6</div>
+  <div id="7box" class="box">7</div>
+  <div id="8box" class="box">8</div>
+</div>
+
+</div>
+
+
+
+<script>
+      let hello = "Hello World!";
+      let num = 16;
+      let str = "Woohoo! I love to code! #javascript";
+      let float = 66;
+      let cookies = "There are " + (num + float) + " cookies in the cookie jar.";
+      let ran = Math.floor(Math.random()*100);
+      let log = Math.ceil(9.3);
+      let int = Number.isInteger(log);
+
+      document.getElementById("1box").innerHTML = hello;
+      document.getElementById("2box").innerHTML = num;
+      document.getElementById("3box").innerHTML = str;
+      document.getElementById("4box").innerHTML = float;
+      document.getElementById("5box").innerHTML = cookies;
+      document.getElementById("6box").innerHTML = ran;
+      document.getElementById("7box").innerHTML = log;
+      document.getElementById("8box").innerHTML = int;
+  
+     console.log(hello);
+     console.log(num);
+     console.log(str);
+     console.log(float);
+     console.log(sum);
+     console.log(ran);
+     console.log(log);
+     console.log(int);
+
+</script>
+
+</body>
+</html>

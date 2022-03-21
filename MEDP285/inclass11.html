@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>In Class Assignment 11</title>
+<style>
+body {
+	background-color: #784AB5;
+}
+#output {
+	font-family: sans-serif;
+	color: #1ECBE1;
+}
+</style>
+</head>
+<body>
+<a href="index.html"><b>BACK</b></a><br>
+
+<div id="output" onclick="grow()"><p>click me</p></div>
+
+<script>
+	let size;
+	size=80;
+
+	let hello = "hello, my name is Andrew Lah" //this is my text
+	hello= document.getElementById("output").addEventListener("click",function(){
+		size= size + 4
+		output.style.color="red";
+		output.style.fontSize= size + "px";
+    });
+
+	let hi = "hi welcome to my in class assignment 11"
+	alert(hi); 
+	console.log(hello);
+	function grow () {
+    document.getElementById("output").innerHTML = "OWWWWW!";
+}
+</script>
+</body>
+</html>

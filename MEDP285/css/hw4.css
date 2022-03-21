@@ -1,0 +1,16 @@
+h1 {text-align: center;
+	color: darkblue;
+	font-family: Times New Roman, sans-serif;
+	font-weight: bold;}
+img {width: 300px; 
+	margin: 12px;}
+p {text-align: center;
+	color: darkblue;
+  	font-size: large;
+	line-height: 20px;
+	font-family:Times New Roman, sans-serif;}
+td {font-family: Times New Roman, sans-serif;
+	color: darkblue;}
+svg {display: block;
+	margin: auto;}
+footer {float: left;}

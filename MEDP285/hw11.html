@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Homework 11- JavaScript Mad Libs</title>
+  <style>
+body {
+	background-color: black;
+}
+.container {
+	font-family: sans-serif;
+	color: #1ECBE1;
+}
+</style>
+</head>
+
+<body>
+<a href="index.html"><b>BACK</b></a><br>
+  <div class="container">
+    <center><h1>The Wizard and His/Her Spell</h1></center>
+  <script>
+var questions = 9;
+var questionsLeft = ' [' + questions + ' questions left]';
+var name = prompt('Please type a name' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var potionname = prompt('If you could make a potion, what would you call it?' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var emotion = prompt('Please type an emotion ' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var number = prompt('Please type a large number' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var fruit = prompt('Name your favorite fruit!' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var planet = prompt('If you could name a planet, what would you name it? ' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var color = prompt('Please type your favorite color!' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var adjective = prompt('Please type a smell adjective' + questionsLeft);
+questions -= 1;
+questionsLeft = ' [' + questions + ' questions left]';
+var smallnumber = prompt('Please type a small number' + questionsLeft);
+alert('Press "OK" to view the story YOU built! :)');
+    
+
+var sentence = 
+"<h2>A wizard named " + name; sentence += 
+' is creating a potion. He plans on naming this potion "' + potionname; sentence += 
+'". This potion is supposed to make people ' + emotion; sentence += 
+'. However, ' + name; sentence +=
+' is having trouble with making this potion because it requires ' + number; sentence +=
+' ingredients. The rarest ingredient of them all is "' + fruit; sentence +=
+'", surprisingly. It is hard to find ' + fruit; sentence +=
+' in the wizards home planet, ' + planet; sentence +=
+'. ' + name; sentence +=
+' will need to travel far to gather this ingredient. The color of the potion will be ' + color; sentence +=
+'. The potion will also smell ' + adjective; sentence +=
+'. The potion will be completed in ' + smallnumber; sentence +=
+' days.</h2>';
+document.write(sentence);
+  </script>
+  </div><br>
+  <center><img src="img/potion.gif"></center>
+</body>
+</html>

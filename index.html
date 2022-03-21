@@ -7,34 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Production 2</title>
     <link rel="stylesheet" href="index.css">
-    <script src="script.js"></script>
+    <script src="index.js"></script>
 </head>
 
 <body>
-    <section><h2></h2></section>
-    <header>
-        <div class="container">
-            <div id="back"><a href="index.html">Andrew Lah- Web Production 2</a></div>
-            <nav>
-                <ul>
-                    <li><a href="">Homeworks</a></li>
-                    <li><a href="#">Midterm</a></li>
-                    <li><a href="#">Final</a></li>
-                    <li><a href="#">Previous work</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html">Home</a>
+        <a href="MEDP285/index.html">Previous Work</a>
+    
+        <a>Homeworks</a>
+    
+        <ul id="homeworklist">
+            <a href="#">Homework 1</a>
+            <a href="#">Homework 2</a>
+            <a href="#">Homework 3</a>
+        </ul>
+        
+    </div>
+
+    <button class="openbtn" onclick="openNav()">☰</button>
+    <center>
     <h1>Web Production 2</h1>
-
-    <p id="intro">Welcome to my page. My name is Andrew Lah and I am a junior at CUNY Hunter College. Outside of school I love to
-        bike, rock climb,
-        take photos, and gym. On this page, you will see what I develop throughout the semester in Web Production 2. Through this course, I am hoping to be more confident in my web developing skills and learn more about javascript. 
-    <p>
-    <img id="me" src="img/me.jpg">
-
-
+    <div id="intro">
+        <p>Welcome to my page. My name is Andrew Lah and I am a junior at CUNY Hunter College. Outside of school I love
+            to
+            bike, rock climb,
+            take photos, and gym. On this page, you will see what I develop throughout the semester in Web Production 2.
+            Through this course, I am hoping to be more confident in my web developing skills and learn more about
+            javascript.
+        <p>
+            <img id="me" src="img/me.jpg">
+    </div>
+</center>
 </body>
 
 </html>

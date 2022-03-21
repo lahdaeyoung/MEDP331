@@ -6,51 +6,11 @@ body {
     ;
 }
 
-header{
-    background: #4f819e;
-}
-
-.container {
-    width: 88%;
-}
-
 #back{
     padding: 10px 0;
     float: left;
     text-decoration: none;
     text-transform: uppercase;
-}
-
-header::after {
-    content: '';
-    display: table;
-    clear: both;
-}
-nav{
-    float: right;
-}
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-nav li {
-    display: inline-block;
-    margin-left: 50px;
-    padding-top: 25px;
-}
-
-nav a {
-    color: #dba484;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 20px;
-}
-
-nav a:hover {
-    color:#2d5369
 }
 
 #intro {
@@ -59,9 +19,6 @@ nav a:hover {
     width: 50%;
 }
 
-#me{
-    float: left;
-}
 h1{
     text-align: center;
     font-size: 40px;
@@ -85,3 +42,65 @@ img{
     height: 800px;
     width: auto;
 }
+
+/*css referenced from w3schools-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapse_sidebar*/
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #97705a;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #396e8d;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #dba484;
+  }
+  
+  .sidebar ul {
+      font-size: 12px;
+  }
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 25px;
+    cursor: pointer;
+    background-color: #dba484;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #946d57;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }

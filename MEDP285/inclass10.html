@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS3 Animations</title>
+
+	<style>
+
+/* The animation code */
+@keyframes example3 {
+    0%   {left:0px;}
+    100% {left:400px;}
+}
+
+.box3 {
+    position: relative;
+    animation-name: example3;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+@keyframes example2 {
+    0%   {left:0px;}
+    100% {left:400px;}
+}
+
+.box2 {
+    position: relative;
+    animation-name: example2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+
+@keyframes example1 {
+    0%   {left:0px;}
+    100% {left:400px;}
+}
+
+.box1 {
+    position: relative;
+    animation-name: example1;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes example4 {
+    0%   {left:0px;}
+    100% {left:400px;}
+}
+
+.box4 {
+    position: relative;
+    animation-name: example4;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+.box3 img{
+	width:20%;
+	height:10%;
+}
+.box2 img{
+	width:20%;
+	height:10%;
+}
+.box1 img{
+	width:20%;
+	height:10%;
+	left: 200px;
+}
+.box4 img{
+	width:20%;
+	height:10%;
+}
+
+	</style>
+</head>
+<body>
+
+<div class="box3">
+	<img src="img/rabbit1.png">
+</div>
+<div class="box2">
+	<img src="img/rabbit2.png">
+</div>
+<div class="box1">
+	<img src="img/rabbit3.png">
+</div>
+<div class="box4">
+	<img src="img/rabbit4.png">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>In Class Assignment #3</title>
+  </head>
+<div class="Responsive">
+<body style="background-color: lightcyan;">
+<a href="index.html"><b>BACK</b></a>
+<center><h1>Responsive Images</h1>
+<br>
+<p>SRCSET Method</p>
+    <img srcset="img/car480.jpg 480w,
+                  img/car960.jpg 960w,
+                  img/car1280.jpg 1280w," 
+          sizes="(max-width: 480px) 100vw,
+                 (max-width: 960px) 90vw,
+                 (max-width: 1280px) 70vw,
+                 1280px" src="img/car480.jpg" alt="car">
+</center>
+</div>
+<br>
+<center>
+<p>Picture Method</p>
+<br>
+<picture>
+  <source media="(min-width: 1280px)" srcset="img/view1280.jpg">
+  <source media="(min-width: 960px)" srcset="img/view960.jpg">
+  <source media="(min-width: 480px)" srcset="img/view480.jpg">
+  <img src="img/view480.jpg" alt="Sunset View">
+</picture>
+  </center>
+</body>
+</html>

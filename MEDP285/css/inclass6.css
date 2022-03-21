@@ -1,0 +1,42 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 50% 50%;
+
+    text-align: center;
+    color:white;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size:24px;
+
+
+}
+
+
+#item1{
+	background-color: #B2D6FF;
+}
+#item2{
+	background-color: #FFA07A;
+}
+#item3{
+	background-color: #FCFC40;
+}
+#item4{
+	background-color: #93EC90;
+}
+#item5{
+	background-color: #EC90EC;
+}
+#item6{
+	background-color: #0DFCFC;
+}
+
+#killjoy{
+	width: 70%;
+	height: auto;
+}
+
+#omen {
+	width: 90%;
+	height: auto;
+}

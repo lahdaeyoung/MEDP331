@@ -1,0 +1,38 @@
+.postmalone {
+    display: grid; color: lightskyblue;
+    grid-template-columns:33.33% 33.33% 33.33%;
+    grid-template-rows:15% 50% 30% 15%;
+    column-gap: 5px;
+    row-gap: 5px;
+    text-align: center;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size:20px; 
+}
+
+img {width: 550px;
+    height: auto;}
+
+#signature{width: 80px;
+            height: auto;}
+
+.one {font-weight: bold;
+      grid-column-start: 1;
+      grid-column-end: 4;
+  background-color: #BA6845;
+    color: black;}
+.two {grid-column-start:1;
+      grid-column-end:3;
+    background-color:#4597BA;
+    color: black;}
+.three {color: black;
+  background-color: #4597BA;}
+.four {color: black;
+  background-color: #4597BA;}
+.five {grid-column-start:2;
+       grid-column-end:4;
+  color: black;
+  background-color: #4597BA;}
+
+.six {grid-column-start:1;
+      grid-column-end:4;
+  background-color: #4597BA;}
