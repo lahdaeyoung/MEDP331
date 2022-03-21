@@ -11,8 +11,27 @@
 
 </head>
 
-<body>
 
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="../index.html">Home</a>
+    <a href="../MEDP285/index.html">Previous Work</a>
+
+    <a>Homework List</a>
+
+    <ul id="homeworklist">
+        <div class="homeworklist">
+        <a href="#">Homework 1</a>
+        <a href="#">Homework 2</a>
+        <a href="#">Homework 3</a>
+    </div>
+    </ul>
+
+</div>
+
+<div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>
     <h1>Image Gallery</h1>
     <div id="container">
 
@@ -32,8 +51,12 @@
             Save Image
         </button>
     </div>
-    
-        <center><img id="img" src="https://picsum.photos/800"></center>
+
+    <center><img id="img" src="https://picsum.photos/800"></center>
+
+    <footer>
+<p>Andrew Lah</p>
+    </footer>
 
     <script>
         $("#disappear").click(function () {
@@ -61,7 +84,17 @@
             $("#img").fadeIn("slow", function () {
             });
         });
+        //script referenced from w3schools
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
     </script>
-</body>
+    </body>
 
 </html>
