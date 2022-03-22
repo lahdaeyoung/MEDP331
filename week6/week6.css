@@ -76,7 +76,7 @@ button:hover{
     top: 0;
     right: 25px;
     font-size: 36px;
-    margin-left: 50px;
+    margin-left: 40px;
   }
   
   .openbtn {
@@ -101,4 +101,24 @@ button:hover{
   @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
+  }
+
+/*footer divider*/
+  .divider {
+    height:3px;
+    border-width:0;
+    color:#2f96a8;
+    background-color:#2f96a8;
+    margin: 4rem 0;
+    margin-bottom: 0;
+  }
+
+  #floatleft {
+      display: flex;
+      float: left;
+  }
+
+  #floatright {
+      display: flex;
+      float: right;
   }
