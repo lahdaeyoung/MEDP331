@@ -22,10 +22,10 @@
 
     <ul id="homeworklist">
         <div class="homeworklist">
-        <a href="#">Homework 1</a>
-        <a href="#">Homework 2</a>
-        <a href="#">Homework 3</a>
-    </div>
+            <a href="#">Homework 1</a>
+            <a href="#">Homework 2</a>
+            <a href="#">Homework 3</a>
+        </div>
     </ul>
 
 </div>
@@ -44,8 +44,7 @@
         <button id="grey">
             Turn me Grey
         </button>
-        <button id="shuffle">
-            Shuffle Image
+        <button class="shuffle">Shuffle Image
         </button>
         <button id="save">
             Save Image
@@ -54,11 +53,15 @@
 
     <center><img id="img" src="https://picsum.photos/800"></center>
 
-    <footer>
-<p>Andrew Lah</p>
-    </footer>
-
     <script>
+        const refreshButton = document.querySelector('.shuffle');
+
+        const refreshPage = () => {
+            location.reload();
+        }
+
+        refreshButton.addEventListener('click', refreshPage)
+
         $("#disappear").click(function () {
             $("#img").fadeOut("slow", function () {
             });
@@ -72,12 +75,6 @@
         $("#grey").click(function () {
             $("#img").addClass('grayscale', function () {
             });
-        });
-
-        $('#shuffle').on({
-            'click': function () {
-                $('#img').attr('src', 'https://picsum.photos/800');
-            }
         });
 
         $("#save").click(function () {
