@@ -112,13 +112,3 @@ button:hover{
     margin: 4rem 0;
     margin-bottom: 0;
   }
-
-  #floatleft {
-      display: flex;
-      float: left;
-  }
-
-  #floatright {
-      display: flex;
-      float: right;
-  }
