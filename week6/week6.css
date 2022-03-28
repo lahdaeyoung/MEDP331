@@ -11,6 +11,10 @@ h1{
   text-align: center;
 }
 
+h2{
+  font-size: 28px;
+}
+
 img{
   border:3px solid #2f96a8;
   border-radius: 4px;
