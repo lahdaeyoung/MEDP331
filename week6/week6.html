@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 6- Midterm Pitch</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
     <link rel="stylesheet" href="week6.css">
 
 </head>
@@ -43,11 +46,10 @@
             </ul>
         </div>
         <div>
-            <h2>Directions</h2>
+            <h2>How Does it Work?</h2>
             <h3>Step 1- Shuffle through the image gallery.</h3>
             <h3>Step 2- Find a desirable image.</h3>
-            <h3>Step 3- Use the "Turn me grey" button to choose <br>
-                between a grey or colored image.</h3>
+            <h3>Step 3- Use the "Turn me grey" button to choose <br> between a grey or colored image.</h3>
             <h3>Step 4- Save Image!!</h3>
         </div>
     </div>
@@ -69,9 +71,8 @@
             Save Image
         </button>
     </div>
-
-    <center><img id="img" src="https://picsum.photos/800.jpg"></center>
-
+    
+    <center><img id="img" src=""></center>
     <hr class="divider">
 
     <footer class="footer">
@@ -83,9 +84,13 @@
 
     <script>
         const refreshButton = document.querySelector('.shuffle');
+        
+        document.getElementById("img").src = "https://picsum.photos/seed/"+Math.random()+"/800/800";
+
 
         const refreshPage = () => {
-            location.reload();
+            //location.reload();
+            document.getElementById("img").src = "https://picsum.photos/seed/"+Math.random()+"/800/800";
         }
 
         refreshButton.addEventListener('click', refreshPage)
@@ -101,13 +106,33 @@
         });
 
         $("#grey").click(function () {
-            $("#img").addClass('grayscale', function () {
-            });
+            
+            document.getElementById("img").src = document.getElementById("img").src + "?grayscale";
+
+        });
+        //download button
+        function Download(url, fileName) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.responseType = "blob";
+            xhr.onload = function () {
+                var urlCreator = window.URL || window.webkitURL;
+                var imageUrl = urlCreator.createObjectURL(this.response);
+                var tag = document.createElement('a');
+                tag.href = imageUrl;
+                tag.download = fileName;
+                document.body.appendChild(tag);
+                tag.click();
+                document.body.removeChild(tag);
+            }
+            xhr.send();
+        }
+        $("#save").click(function () {
+            Download(document.getElementById("img").src,"download.jpg");
+            
         });
 
-        $("#save").click(function () {
-            downloadImage(document.querySelector("#img").src);
-        });
+        
         //script referenced from w3schools
         function openNav() {
             document.getElementById("mySidebar").style.width = "250px";
@@ -119,19 +144,7 @@
             document.getElementById("main").style.marginLeft = "0";
         }
 
-        async function downloadImage(imageSrc) {
-            const image = await fetch(imageSrc)
-            const imageBlog = await image.blob()
-            const imageURL = URL.createObjectURL(imageBlog)
 
-            const link = document.createElement('a')
-            link.href = imageURL
-            let randomNum = Math.floor(Math.random() * 100);
-            link.download = `randomImage${randomNum}`;
-            document.body.appendChild(link)
-            link.click()
-            document.body.removeChild(link)
-        }
     </script>
     </body>
 
