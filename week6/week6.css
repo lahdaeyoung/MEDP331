@@ -1,114 +1,121 @@
 body{
-    background-color: #FF7F50;
-    color: #2f96a8;
-    -webkit-text-stroke: 1px #236a77;
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  background-color: #FF7F50;
+  color: #2f96a8;
+  -webkit-text-stroke: 1px #236a77;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
 h1{
-    font-size: 40px;
-    text-decoration: underline;
-    text-align: center;
+  font-size: 40px;
+  text-decoration: underline;
+  text-align: center;
 }
 
 img{
-    border:3px solid #2f96a8;
-    border-radius: 4px;
-    text-align: center;
+  border:3px solid #2f96a8;
+  border-radius: 4px;
+  text-align: center;
 }
 
 button {
-    font-size: 15px;
-    margin-right: 2px;
-    margin-left: 2px;
-    margin-bottom: 2px;
-    transition-duration: 0.6s;
-    text-orientation: upright;
-    text-transform: uppercase;
-    border:2px solid #2f96a8;
-    border-radius: 12px;
-    padding: 10px 6px;
-    cursor: pointer;
+  font-size: 15px;
+  margin-right: 2px;
+  margin-left: 2px;
+  margin-bottom: 2px;
+  transition-duration: 0.6s;
+  text-orientation: upright;
+  text-transform: uppercase;
+  border:2px solid #2f96a8;
+  border-radius: 12px;
+  padding: 10px 6px;
+  cursor: pointer;
 }
 
 button:hover{
-    background-color: #62c8da;
-    color: white;
+  background-color: #62c8da;
+  color: white;
 }
 
 #container {
-    display: flex;
-    justify-content: center;   
+  display: flex;
+  justify-content: center;   
+}
+
+#container-2 {
+display: flex;
+justify-content: space-evenly;
 }
 
 /*css referenced from w3schools-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapse_sidebar*/
 .sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #c05d3a;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-  
-  .sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #2f96a8;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidebar a:hover {
-    color: #FF7F50;
-  }
-  
-  .sidebar ul {
-      font-size: 12px;
-  }
-  .sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 40px;
-  }
-  
-  .openbtn {
-    font-size: 25px;
-    cursor: pointer;
-    background-color: #FF7F50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-  }
-  
-  .openbtn:hover {
-    background-color: #FF7F50;
-  }
-  
-  #main {
-    transition: margin-left .5s;
-    padding: 16px;
-  }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-  }
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #c05d3a;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 4px 4px 4px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #2f96a8;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #c7623d;
+}
+
+.sidebar ul {
+  padding: 4px 4px 4px 32px;
+  font-size: 12px;
+}
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 40px;
+}
+
+.openbtn {
+  font-size: 25px;
+  cursor: pointer;
+  background-color: #FF7F50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #FF7F50;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
 
 /*footer divider*/
-  .divider {
-    height:3px;
-    border-width:0;
-    color:#2f96a8;
-    background-color:#2f96a8;
-    margin: 4rem 0;
-    margin-bottom: 0;
-  }
+.divider {
+  height:3px;
+  border-width:0;
+  color:#2f96a8;
+  background-color:#2f96a8;
+  margin: 4rem 0;
+  margin-bottom: 0;
+}
+
