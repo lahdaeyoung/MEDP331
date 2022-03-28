@@ -40,17 +40,17 @@
         <div>
             <h2>Why use this site?</h2>
             <ul>
-                <li>Simple & Easy to use</li>
-                <li>High Definition</li>
-                <li>Free</li>
+                <li><h3>Simple & Easy to use</h3></li>
+                <li><h3>High Definition</h3></li>
+                <li><h3>Free</h3></li>
             </ul>
         </div>
         <div>
-            <h2>Directions</h2>
-            <h3>Step 1-</h3>
-            <h3>Step 2-</h3>
-            <h3>Step 3-</h3>
-            <h3>Step 4-</h3>
+            <h2>How Does it Work?</h2>
+            <h3>Step 1- Shuffle through the image gallery.</h3>
+            <h3>Step 2- Find a desirable image.</h3>
+            <h3>Step 3- Use the "Turn me grey" button to choose <br> between a grey or colored image.</h3>
+            <h3>Step 4- Save Image!!</h3>
         </div>
     </div>
 
@@ -110,6 +110,7 @@
             document.getElementById("img").src = document.getElementById("img").src + "?grayscale";
 
         });
+        //download button
         function Download(url, fileName) {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", url, true);
