@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 6- Midterm Pitch</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
     <link rel="stylesheet" href="week6.css">
 
 </head>
@@ -27,12 +30,30 @@
             <a href="#">Homework 3</a>
         </div>
     </ul>
-
 </div>
 
 <div id="main">
     <button class="openbtn" onclick="openNav()">☰</button>
-    <h1>Image Gallery</h1>
+    <h1>Random Image Generator</h1>
+
+    <div id="container-2">
+        <div>
+            <h2>Why use this site?</h2>
+            <ul>
+                <li>Simple & Easy to use</li>
+                <li>High Definition</li>
+                <li>Free</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Directions</h2>
+            <h3>Step 1-</h3>
+            <h3>Step 2-</h3>
+            <h3>Step 3-</h3>
+            <h3>Step 4-</h3>
+        </div>
+    </div>
+
     <div id="container">
 
         <button id="disappear">
@@ -50,23 +71,26 @@
             Save Image
         </button>
     </div>
-
-    <center><img id="img" src="https://picsum.photos/800"></center>
-
-    <hr class="divider">
     
+    <center><img id="img" src=""></center>
+    <hr class="divider">
+
     <footer class="footer">
         <a href="#">Back to top</a>
         <p>&copy; MEDP 331- Web Production 2</p>
         <p>Andrew Lah</p>
         <p>andrew.lah76@myhunter.cuny.edu</p>
-      </footer>
+    </footer>
 
     <script>
         const refreshButton = document.querySelector('.shuffle');
+        
+        document.getElementById("img").src = "https://picsum.photos/seed/"+Math.random()+"/800/800";
+
 
         const refreshPage = () => {
-            location.reload();
+            //location.reload();
+            document.getElementById("img").src = "https://picsum.photos/seed/"+Math.random()+"/800/800";
         }
 
         refreshButton.addEventListener('click', refreshPage)
@@ -82,14 +106,32 @@
         });
 
         $("#grey").click(function () {
-            $("#img").addClass('grayscale', function () {
-            });
+            
+            document.getElementById("img").src = document.getElementById("img").src + "?grayscale";
+
+        });
+        function Download(url, fileName) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.responseType = "blob";
+            xhr.onload = function () {
+                var urlCreator = window.URL || window.webkitURL;
+                var imageUrl = urlCreator.createObjectURL(this.response);
+                var tag = document.createElement('a');
+                tag.href = imageUrl;
+                tag.download = fileName;
+                document.body.appendChild(tag);
+                tag.click();
+                document.body.removeChild(tag);
+            }
+            xhr.send();
+        }
+        $("#save").click(function () {
+            Download(document.getElementById("img").src,"download.jpg");
+            
         });
 
-        $("#save").click(function () {
-            $("#img").fadeIn("slow", function () {
-            });
-        });
+        
         //script referenced from w3schools
         function openNav() {
             document.getElementById("mySidebar").style.width = "250px";
@@ -100,6 +142,8 @@
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
         }
+
+
     </script>
     </body>
 
