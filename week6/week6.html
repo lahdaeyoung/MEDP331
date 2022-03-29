@@ -83,50 +83,60 @@
     </footer>
 
     <script>
+        //adding comments to help organize
+        //connecting the shuffle button to refreshButton
         const refreshButton = document.querySelector('.shuffle');
-        
+        //DOM manipulation (adding the lorem picsum link to the img element)
         document.getElementById("img").src = "https://picsum.photos/seed/"+Math.random()+"/800/800";
 
-
+        //refreshPage function
         const refreshPage = () => {
             document.getElementById("img").src = "https://picsum.photos/seed/"+Math.random()+"/800/800";
         }
-
+        //on click of the refreshButton, it will carry out the function of refreshPage
         refreshButton.addEventListener('click', refreshPage)
-
+        //jquery function for image disappearance
         $("#disappear").click(function () {
             $("#img").fadeOut("slow", function () {
             });
         });
-
+        //jquery function for image reapperance
         $("#reappear").click(function () {
             $("#img").fadeIn("slow", function () {
             });
         });
-
+        //adding click function to the grey button
         $("#grey").click(function () {
-            
+            //DOM manipulation by adding ?grayscale on click function
             document.getElementById("img").src = document.getElementById("img").src + "?grayscale";
-
+    
         });
-        //download button
+        //referenced from mozilla.org
+        //https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#monitoring_progress
+        //https://developer.mozilla.org/en-US/docs/Web/API/File
+        //https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL
+        //download function of the url 
         function Download(url, fileName) {
+            //data request to var xhr
             var xhr = new XMLHttpRequest();
             xhr.open("GET", url, true);
             xhr.responseType = "blob";
             xhr.onload = function () {
                 var urlCreator = window.URL || window.webkitURL;
+                //using creatObjectURL to var imageUrl
                 var imageUrl = urlCreator.createObjectURL(this.response);
                 var tag = document.createElement('a');
+                //adding values to the tags href and download
                 tag.href = imageUrl;
                 tag.download = fileName;
+                //DOM manipulation appending
                 document.body.appendChild(tag);
                 tag.click();
                 document.body.removeChild(tag);
             }
             xhr.send();
         }
-        //jquery function
+        //on click function to download the img link and naming it "desirableimage.jpg"
         $("#save").click(function () {
             Download(document.getElementById("img").src,"desirableimage.jpg");
             
