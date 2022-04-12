@@ -8,8 +8,8 @@
  * Database `web06db`
  */
 
-/* `web06db`.`clothing data` */
-$clothing_data = array(
+/* `web06db`.`clothingdata` */
+$clothingdata = array(
   array('ID' => '0','Price' => '0','Category' => '','Color' => '0','Size' => '0'),
   array('ID' => '0','Price' => '0','Category' => '','Color' => '0','Size' => '0'),
   array('ID' => '0','Price' => '0','Category' => '','Color' => '0','Size' => '0'),
