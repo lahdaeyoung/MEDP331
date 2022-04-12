@@ -14,7 +14,7 @@
         die("Connection failed: " . mysqli_connect_error());
     }
     echo "connected successfully<br>";
-
+a
     //pull form data and store in variables
     if (isset($_POST['ID'], $_POST['price'], $_POST['category'], $_POST['color'], $_POST['size'])) {
         $ID = $_POST['ID'];
