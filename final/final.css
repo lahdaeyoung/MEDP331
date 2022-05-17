@@ -25,6 +25,7 @@ img{
 
 button {
   color: #287d8b;
+  background-color: #86da98;
   font-weight: bold;
   font-size: 15px;
   margin-right: 2px;
@@ -120,25 +121,29 @@ justify-content: space-evenly;
 /*SIDEBAR STYLING ENDS*/
 
 /**/
-#aboutus {
-  background-color: white;
+#mission {
+  background-color: #b1e9bd;
   color: #287d8b;
-  font-weight: bold;
-  font-size: 15px;
+  font-size: 18px;
   margin-right: 2px;
   margin-left: 2px;
   margin-bottom: 2px;
   transition-duration: 0.3s;
   text-orientation: upright;
-  text-transform: uppercase;
   border:2px solid #2f96a8;
-  border-radius: 12px;
-  padding: 10px 6px;
+  border-radius: 30px;
+  padding: 5px 6px;
 }
 /**/
 
+#takesurvey {
+  font-weight: bold;
+}
+
 #survey {
-  background-color: white;
+  display: flex;
+  float: right;
+  background-color: #86da98;
   color: #287d8b;
   font-weight: bold;
   font-size: 15px;
@@ -146,10 +151,16 @@ justify-content: space-evenly;
   margin-left: 2px;
   margin-bottom: 2px;
   transition-duration: 0.3s;
+  text-decoration: none;
   text-transform: uppercase;
   border:2px solid #2f96a8;
   border-radius: 12px;
   padding: 10px 6px;
+}
+
+#survey:hover {
+  background-color: #86da98;
+  color: white;
 }
 
 /*footer divider*/
@@ -170,7 +181,7 @@ justify-content: space-evenly;
 }
 
 .flex-container > div {
-  background-color: #f1f1f1;
+  background-color: #86da98;
   margin-right: 2px;
   margin-left: 2px;
   margin-bottom: 2px;
@@ -178,8 +189,6 @@ justify-content: space-evenly;
   font-weight: bold;
   font-size: 15px;
   padding: 10px 6px;
-  cursor: pointer;
   border:2px solid #2f96a8;
-  border-radius: 12px;
 }
 /*end of styling for counter buttons*/
