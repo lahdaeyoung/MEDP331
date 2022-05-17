@@ -16,26 +16,26 @@
     echo "connected successfully<br>";
 
     //pull form data and store in variables
-    if (isset($_POST['ID'], $_POST['price'], $_POST['category'], $_POST['color'], $_POST['size'])) {
-        $ID = $_POST['ID'];
-        $price = $_POST['price'];
-        $category = $_POST['category'];
-        $color = $_POST['color'];
-        $size = $_POST['size'];
+    if (isset($_POST['lik'], $_POST['sav'], $_POST['for'], $_POST['hear'], $_POST['suggestions'])) {
+        $ID = $_POST['lik'];
+        $price = $_POST['sav'];
+        $category = $_POST['for'];
+        $color = $_POST['hear'];
+        $size = $_POST['suggestions'];
 
     } else {
-        echo 'You need to input all the details.';
+        echo 'Please complete the survey';
     }
 
     //inserting form data into a table in your database
     //student is the name of the table i created and firstname, lastname, class, year are the names of my columns
 
-    $sql = "INSERT INTO clothingdata (ID, Price, Category, Color, Size)
-    VALUES ('$ID', '$price', '$category', '$color', '$size')";
+    $sql = "INSERT INTO survey (lik , sav, for, hear, suggestions)
+    VALUES ('$lik', '$sav', '$for', '$hear', '$suggestions')";
     
     //return status to user
     if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
+        echo "Thank you for submitting!";
       } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
       }

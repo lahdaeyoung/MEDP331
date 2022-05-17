@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="final.css">
+
+</head>
+
+<!--referenced from w3schools-->
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="../index.html">Home</a>
+    <a href="../MEDP285/index.html">Previous Work</a>
+
+    <a>Homework List</a>
+
+    <ul id="homeworklist">
+        <div class="homeworklist">
+            <a href="week2/week2.html">Homework 1</a>
+            <a href="week3/week3.html">Homework 2</a>
+            <a href="week4/week4.html">Homework 3</a>
+        </div>
+    </ul>
+</div>
+<!--referenced from w3schools-->
+
+<div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>
+    <h1>Random Image Generator</h1>
+
+    <div id="container-2">
+        <div>
+            <h2>Why use this site?</h2>
+            <ul>
+                <li>
+                    <h3>Simple & Easy to use</h3>
+                </li>
+                <li>
+                    <h3>High Definition</h3>
+                </li>
+                <li>
+                    <h3>Free</h3>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2>How Does it Work?</h2>
+            <h3>Step 1- Shuffle through the image gallery.</h3>
+            <h3>Step 2- Find a desirable image.</h3>
+            <h3>Step 3- Use the "Turn me grey" button to choose <br> between a grey or colored image.</h3>
+            <h3>Step 4- Save Image!!</h3>
+        </div>
+    </div>
+
+    <div id="container">
+
+        <button id="disappear">
+            Make me disappear
+        </button>
+        <button id="reappear">
+            Make me reappear
+        </button>
+        <button id="grey">
+            Turn me Grey
+        </button>
+        <button class="shuffle">Shuffle Image
+        </button>
+        <button id="rotatebtn">Rotate Image
+        </button>
+        <button id="save">
+            Save Image
+        </button>
+    </div>
+
+    <center><img id="img" src=""></center>
+<!--Flex container for counters-->
+    <div class="flex-container">
+        <!--Counter buttons-->
+        <div id="disbtncount">DISAPPEARED: 0</div>
+        <div id="rabtncount">REAPPEARED: 0</div>
+        <div id="greybtncount">GREYED: 0</div>
+        <div id="shufflecount">SHUFFLED: 0</div>
+        <div id="rotatecount">ROTATED: 0</div>
+        <div id="savecount">SAVED: 0</div>
+      </div>
+
+    <hr class="divider">
+
+<center><h2>About us</h2></center>
+
+<div id="aboutus"><center>
+Sometimes a person doesn't know what they're looking for. <br>
+This site can help you with that! <br>
+This site aims to deliver the perfect image to you without 
+the use of <br> too many buttons.</center>
+</div>
+<br><br><a id="survey" href="survey.html">IMAGE SURVEY</a>
+
+    <hr class="divider">
+<!--Footer-->
+    <footer class="footer">
+        <a href="#">Back to top</a>
+        <p>&copy; MEDP 331- Web Production 2</p>
+        <p>Andrew Lah</p>
+        <p>andrew.lah76@myhunter.cuny.edu</p>
+    </footer>
+
+    <script>
+    
+        //connecting the shuffle button to refreshButton
+        const refreshButton = document.querySelector('.shuffle');
+        //DOM manipulation (adding the lorem picsum link to the img element)
+        document.getElementById("img").src = "https://picsum.photos/seed/" + Math.random() + "/800/800";
+
+        // variables for each button
+        var disbtncount = 0;
+        var rabtncount = 0;
+        var greybtncount = 0;
+        var shufflecount = 0;
+        var rotatecount = 0;
+        var savecount = 0;
+
+        //refreshPage function
+        const refreshPage = () => {
+            //adding onto shufflecount var
+            shufflecount += 1;
+            document.getElementById("img").src = "https://picsum.photos/seed/" + Math.random() + "/800/800";
+            //added jquery string to add "SHUFFLED: " value in html
+            $('#shufflecount').html("SHUFFLED: "+shufflecount);
+        }
+        //on click of the refreshButton, it will carry out the function of refreshPage
+        refreshButton.addEventListener('click', refreshPage);
+        //jquery function for image disappearance
+        $("#disappear").click(function () {
+            //adding onto disbtncount var
+            disbtncount += 1;
+            $("#img").fadeOut("slow", function () {
+            });
+            //added jquery string to add "DISAPPEARED" value in html
+            $('#disbtncount').html("DISAPPEARED: "+disbtncount);
+        });
+        //jquery function for image reapperance
+        $("#reappear").click(function () {
+            //adding onto rabtncount var
+            rabtncount +=1;
+            $("#img").fadeIn("slow", function () {
+            });
+            //added jquery string to add "REAPPEARED: " value in html
+            $('#rabtncount').html("REAPPEARED: "+rabtncount);
+        });
+        //adding click function to the grey button
+        $("#grey").click(function () {
+            //adding onto greybtncount var
+            greybtncount+=1;
+            //DOM manipulation by adding ?grayscale on click function
+            document.getElementById("img").src = document.getElementById("img").src + "?grayscale";
+            //added jquery string to add "GREYED: " value in html
+            $('#greybtncount').html("GREYED: "+greybtncount);
+        });
+        //adding click function to the rotate button
+        $("#rotatebtn").click(function () {
+            //adding onto rotatecount var
+            rotatecount +=1;
+            //variable for 90 degree rotation
+            var angle = rotatecount * 90;
+            //jquery string to change css of image and transform with rotate var
+            $('#img').css({ 'transform': 'rotate(' + angle + 'deg)' });
+            //added jquery string to add "ROTATED: " value in html
+            $('#rotatecount').html("ROTATED: "+rotatecount);
+
+        });
+        //referenced from mozilla.org
+        //https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#monitoring_progress
+        //https://developer.mozilla.org/en-US/docs/Web/API/File
+        //https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL
+        //download function of the url 
+        function Download(url, fileName) {
+            //data request to var xhr
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.responseType = "blob";
+            xhr.onload = function () {
+                var urlCreator = window.URL || window.webkitURL;
+                //using creatObjectURL to var imageUrl
+                var imageUrl = urlCreator.createObjectURL(this.response);
+                var tag = document.createElement('a');
+                //adding values to the tags href and download
+                tag.href = imageUrl;
+                tag.download = fileName;
+                //DOM manipulation appending
+                document.body.appendChild(tag);
+                tag.click();
+                document.body.removeChild(tag);
+            }
+            xhr.send();
+        }
+        //on click function to download the img link and naming it "desirableimage.jpg"
+        $("#save").click(function () {
+            //adding onto savecount var
+            savecount+=1;
+            Download(document.getElementById("img").src, "desirableimage.jpg");
+            //added jquery string to add "Save Count: " value in html
+            $('#savecount').html("Save Count: "+savecount);
+        });
+
+
+        //script referenced from w3schools
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
+        
+       
+    </script>
+    </body>
+
+</html>
