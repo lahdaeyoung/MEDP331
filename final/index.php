@@ -37,7 +37,7 @@
     if (mysqli_query($conn, $sql)) {
         echo "Thank you for your response! ";
       } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo "Please Try Again.: " . $sql . "<br>" . mysqli_error($conn);
       }
 
     //close connection
