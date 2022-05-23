@@ -18,7 +18,8 @@
 
     <div class="gallery-container"></div>
     
-<div>
+<!-- gave class name "d-none" which i style in css to display:none -->
+<div class="form-container d-none">
     <h2>Please give us feedback on our site!</h2>
 
     <form action='index.php' method="post">
@@ -101,6 +102,9 @@
                         `;
                             }
                         })
+                        // when the images are shown, we can remove the class d-none so the div is also shown
+                        let formContainer = document.querySelector(".form-container");
+                        formContainer.classList.remove("d-none")
                     }
                     else {
                         console.log("there was a problem...")

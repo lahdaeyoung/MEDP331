@@ -121,3 +121,7 @@ input {
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
+
+.d-none {
+  display: none;
+}

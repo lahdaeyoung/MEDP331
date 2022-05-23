@@ -141,21 +141,19 @@ justify-content: space-evenly;
 }
 
 #survey {
-  display: flex;
-  float: right;
   background-color: #86da98;
   color: #287d8b;
   font-weight: bold;
-  font-size: 15px;
-  margin-right: 2px;
-  margin-left: 2px;
+  font-size: 19px;
+  margin-right: 4px;
+  margin-left: 4px;
   margin-bottom: 2px;
   transition-duration: 0.3s;
   text-decoration: none;
   text-transform: uppercase;
   border:2px solid #2f96a8;
   border-radius: 12px;
-  padding: 10px 6px;
+  padding: 8px 10px;
 }
 
 #survey:hover {
