@@ -30,7 +30,7 @@
     //inserting form data into a table in your database
     //student is the name of the table i created and firstname, lastname, class, year are the names of my columns
 
-    $sql = "INSERT INTO clothingdata (lik, sav, for, hear, suggestions)
+    $sql = "INSERT INTO imagedata (lik, sav, for, hear, suggestions)
     VALUES ('$lik', '$sav', '$hear', '$for', '$suggestions')";
     
     //return status to user
