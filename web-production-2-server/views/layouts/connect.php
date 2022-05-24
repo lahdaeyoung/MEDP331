@@ -24,7 +24,7 @@
         $suggestions = $_POST['suggestions'];
 
     } else {
-        echo 'Please complete the form.';
+        echo 'You need to input all the details.';
     }
 
     //inserting form data into a table in your database

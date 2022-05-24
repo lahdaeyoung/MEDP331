@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Survey</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="survey.css">
+
+</head>
+
+<body>
+    <a id="back" href="final.html"><b>BACK</b></a><br>
+    <h1>Image Survey</h1>
+    <center><button class="displayBtn">Display Images</button></center>
+
+    <div class="gallery-container"></div>
+    
+<!-- gave class name "d-none" which i style in css to display:none -->
+<div class="form-container d-none">
+    <h2>Please give us feedback on our site!</h2>
+
+    <form action='connect.php' method="post">
+
+        <label for="lik">How many images do you like?</label>
+        <br>
+        <input type='text' name="lik" id="lik" required>
+        <br>
+
+        <label for="sav">How many images would you save?</label>
+        <br>
+        <input type='text' name="sav" id="sav" required>
+        <br>
+
+        <label for="for">What would you use the saved images for?</label>
+        <br>
+        <input type='text' name="for" id="for" required>
+        <br>
+
+        <label for="hear">How did you hear about us?</label>
+        <br>
+        <input type='text' name="hear" id="hear" required>
+        <br>
+
+        <label for="suggestions">Any suggestions?</label>
+        <br>
+        <input type='text' name="suggestions" id="suggestions" required>
+        <br>
+
+        <input type='submit' name='submit' id="submit">
+    </form>
+</div>
+    <hr class="divider">
+    <!--Footer-->
+    <footer class="footer">
+        <a href="#">Back to top</a>
+        <p>&copy; MEDP 331- Web Production 2</p>
+        <p>Andrew Lah</p>
+        <p>andrew.lah76@myhunter.cuny.edu</p>
+    </footer>
+
+
+    <script>
+        // select the display button so we can add an event listener
+        let displayBtn = document.querySelector(".displayBtn");
+        // the click event listener is added to the button
+        displayBtn.addEventListener("click", () => {
+            // one the button is clicked it will execute this function
+            // selecting the gallery container from html where we will put all images
+            // the css for gallery container can be seen in css file
+            let galleryContainer = document.querySelector(".gallery-container")
+            // the url of api to get list of 30 images
+            let apiUrl = `https://picsum.photos/v2/list?limit=31`;
+            //referenced from mozilla.org
+            //https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#monitoring_progress
+            // defining the ajax request
+            let xhr = new XMLHttpRequest();
+            // a get request will be sent to api url to get the data
+            xhr.open("GET", apiUrl);
+            // once the request is sent, handleResponse function will handle the response of ajax request
+            xhr.onreadystatechange = handleResponse;
+            // send the request
+            xhr.send();
+            function handleResponse() {
+                // once the request is sent we are in this function
+                if (xhr.readyState === xhr.DONE) {
+                    // once the ajax request is completed, we check for status of response
+                    if (xhr.status === 200) {
+                        // if status is 200 that means request was successful
+                        // we convert the response of ajax request to an array so we can loop over it
+                        let response = JSON.parse(xhr.responseText);
+                        galleryContainer.innerHTML = "";
+                        // for every item in the response array, we create an image in gallery container
+                        response.forEach((item) => {
+                            console.log(item.url)
+                            if (item.url.includes("photos")) {
+                                // the source of image comes from the api
+                                galleryContainer.innerHTML += `
+                        <img class="gallery_img" src="${item.download_url}"/>
+                        `;
+                            }
+                        })
+                        // when the images are shown, we can remove the class d-none so the div is also shown
+                        let formContainer = document.querySelector(".form-container");
+                        formContainer.classList.remove("d-none")
+                    }
+                    else {
+                        console.log("there was a problem...")
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
