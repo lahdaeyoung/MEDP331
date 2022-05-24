@@ -19,8 +19,8 @@
     if (isset($_POST['lik'], $_POST['sav'], $_POST['for'], $_POST['hear'], $_POST['suggestions'])) {
         $lik = $_POST['lik'];
         $sav = $_POST['sav'];
-        $hear = $_POST['hear'];
-        $for = $_POST['for'];
+        $hear = $_POST['for'];
+        $for = $_POST['hear'];
         $suggestions = $_POST['suggestions'];
 
     } else {
@@ -31,7 +31,7 @@
     //student is the name of the table i created and firstname, lastname, class, year are the names of my columns
 
     $sql = "INSERT INTO imagedata (lik, sav, for, hear, suggestions)
-    VALUES ('$lik', '$sav', '$hear', '$for', '$suggestions')";
+    VALUES ('$lik', '$sav', '$for', '$hear', '$suggestions')";
     
     //return status to user
     if (mysqli_query($conn, $sql)) {

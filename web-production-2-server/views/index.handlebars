@@ -5,110 +5,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Image Generator</title>
+    <title>Image Survey</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-
-    <link rel="stylesheet" href="final.css">
+    <link rel="stylesheet" href="survey.css">
 
 </head>
 
 <body>
-<!--referenced from w3schools-->
-<div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="../index.html">Home</a>
-    <a href="../MEDP285/index.html">Previous Work</a>
+    <a id="back" href="final.html"><b>BACK</b></a><br>
+    <h1>Image Survey</h1>
+    <center><button class="displayBtn">Display Images</button></center>
 
-    <a>Homework List</a>
+    <div class="gallery-container"></div>
+    
+<!-- gave class name "d-none" which i style in css to display:none -->
+<div class="form-container d-none">
+    <h2>Please give us feedback on our site!</h2>
 
-    <ul id="homeworklist">
-        <div class="homeworklist">
-            <a href="week2/week2.html">Homework 1</a>
-            <a href="week3/week3.html">Homework 2</a>
-            <a href="week4/week4.html">Homework 3</a>
-        </div>
-    </ul>
+    <form action='connect.php' method="post">
+
+        <label for="lik">How many images do you like?</label>
+        <br>
+        <input type='text' name="lik" id="lik" required>
+        <br>
+
+        <label for="sav">How many images would you save?</label>
+        <br>
+        <input type='text' name="sav" id="sav" required>
+        <br>
+
+        <label for="for">What would you use the saved images for?</label>
+        <br>
+        <input type='text' name="for" id="for" required>
+        <br>
+
+        <label for="hear">How did you hear about us?</label>
+        <br>
+        <input type='text' name="hear" id="hear" required>
+        <br>
+
+        <label for="suggestions">Any suggestions?</label>
+        <br>
+        <input type='text' name="suggestions" id="suggestions" required>
+        <br>
+
+        <input type='submit' name='submit' id="submit">
+    </form>
 </div>
-<!--referenced from w3schools-->
-
-<div id="main">
-    <button class="openbtn" onclick="openNav()">☰</button>
-    <h1>Random Image Generator</h1>
-
-    <div id="container-2">
-        <div>
-            <h2>Why use this site?</h2>
-            <ul>
-                <li>
-                    <h3>Simple & Easy to use</h3>
-                </li>
-                <li>
-                    <h3>High Definition</h3>
-                </li>
-                <li>
-                    <h3>Free</h3>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <h2>How Does it Work?</h2>
-            <h3>Step 1- Shuffle through the image gallery.</h3>
-            <h3>Step 2- Find a desirable image.</h3>
-            <h3>Step 3- Use the "Turn me grey" button to choose <br> between a grey or colored image.</h3>
-            <h3>Step 4- Save Image!!</h3>
-        </div>
-    </div>
-
-    <div id="container">
-
-        <button id="disappear">
-            Make me disappear
-        </button>
-        <button id="reappear">
-            Make me reappear
-        </button>
-        <button id="grey">
-            Turn me Grey
-        </button>
-        <button class="shuffle">Shuffle Image
-        </button>
-        <button id="rotatebtn">Rotate Image
-        </button>
-        <button id="save">
-            Save Image
-        </button>
-    </div>
-
-    <center><img id="img" src=""></center>
-<!--Flex container for counters-->
-    <div class="flex-container">
-        <!--Counter buttons-->
-        <div id="disbtncount">DISAPPEARED: 0</div>
-        <div id="rabtncount">REAPPEARED: 0</div>
-        <div id="greybtncount">GREYED: 0</div>
-        <div id="shufflecount">SHUFFLED: 0</div>
-        <div id="rotatecount">ROTATED: 0</div>
-        <div id="savecount">SAVED: 0</div>
-      </div>
-
-    <hr class="divider"><br>
-
-<div id="mission"><center>
-    <center><h2>Our Mission</h2></center>
-Sometimes a person doesn't know what they're looking for.
-This site can help you with that!
-This site aims to deliver the perfect image to you using the least amount of buttons. <br> <br>
-<div id="takesurvey">
-    <a id="survey" href="layouts/main.handlebars">Image Survey</a><br><br>
-Loved the image generator? Please tell us in the Image Survey!
-
-</div></center><br>
-</div>
-
     <hr class="divider">
-<!--Footer-->
+    <!--Footer-->
     <footer class="footer">
         <a href="#">Back to top</a>
         <p>&copy; MEDP 331- Web Production 2</p>
@@ -116,119 +61,58 @@ Loved the image generator? Please tell us in the Image Survey!
         <p>andrew.lah76@myhunter.cuny.edu</p>
     </footer>
 
+
     <script>
-    
-        //connecting the shuffle button to refreshButton
-        const refreshButton = document.querySelector('.shuffle');
-        //DOM manipulation (adding the lorem picsum link to the img element)
-        document.getElementById("img").src = "https://picsum.photos/seed/" + Math.random() + "/800/800";
-
-        // variables for each button
-        var disbtncount = 0;
-        var rabtncount = 0;
-        var greybtncount = 0;
-        var shufflecount = 0;
-        var rotatecount = 0;
-        var savecount = 0;
-
-        //refreshPage function
-        const refreshPage = () => {
-            //adding onto shufflecount var
-            shufflecount += 1;
-            document.getElementById("img").src = "https://picsum.photos/seed/" + Math.random() + "/800/800";
-            //added jquery string to add "SHUFFLED: " value in html
-            $('#shufflecount').html("SHUFFLED: "+shufflecount);
-        }
-        //on click of the refreshButton, it will carry out the function of refreshPage
-        refreshButton.addEventListener('click', refreshPage);
-        //jquery function for image disappearance
-        $("#disappear").click(function () {
-            //adding onto disbtncount var
-            disbtncount += 1;
-            $("#img").fadeOut("slow", function () {
-            });
-            //added jquery string to add "DISAPPEARED" value in html
-            $('#disbtncount').html("DISAPPEARED: "+disbtncount);
-        });
-        //jquery function for image reapperance
-        $("#reappear").click(function () {
-            //adding onto rabtncount var
-            rabtncount +=1;
-            $("#img").fadeIn("slow", function () {
-            });
-            //added jquery string to add "REAPPEARED: " value in html
-            $('#rabtncount').html("REAPPEARED: "+rabtncount);
-        });
-        //adding click function to the grey button
-        $("#grey").click(function () {
-            //adding onto greybtncount var
-            greybtncount+=1;
-            //DOM manipulation by adding ?grayscale on click function
-            document.getElementById("img").src = document.getElementById("img").src + "?grayscale";
-            //added jquery string to add "GREYED: " value in html
-            $('#greybtncount').html("GREYED: "+greybtncount);
-        });
-        //adding click function to the rotate button
-        $("#rotatebtn").click(function () {
-            //adding onto rotatecount var
-            rotatecount +=1;
-            //variable for 90 degree rotation
-            var angle = rotatecount * 90;
-            //jquery string to change css of image and transform with rotate var
-            $('#img').css({ 'transform': 'rotate(' + angle + 'deg)' });
-            //added jquery string to add "ROTATED: " value in html
-            $('#rotatecount').html("ROTATED: "+rotatecount);
-
-        });
-        //referenced from mozilla.org
-        //https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#monitoring_progress
-        //https://developer.mozilla.org/en-US/docs/Web/API/File
-        //https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL
-        //download function of the url 
-        function Download(url, fileName) {
-            //data request to var xhr
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", url, true);
-            xhr.responseType = "blob";
-            xhr.onload = function () {
-                var urlCreator = window.URL || window.webkitURL;
-                //using creatObjectURL to var imageUrl
-                var imageUrl = urlCreator.createObjectURL(this.response);
-                var tag = document.createElement('a');
-                //adding values to the tags href and download
-                tag.href = imageUrl;
-                tag.download = fileName;
-                //DOM manipulation appending
-                document.body.appendChild(tag);
-                tag.click();
-                document.body.removeChild(tag);
-            }
+        // select the display button so we can add an event listener
+        let displayBtn = document.querySelector(".displayBtn");
+        // the click event listener is added to the button
+        displayBtn.addEventListener("click", () => {
+            // one the button is clicked it will execute this function
+            // selecting the gallery container from html where we will put all images
+            // the css for gallery container can be seen in css file
+            let galleryContainer = document.querySelector(".gallery-container")
+            // the url of api to get list of 30 images
+            let apiUrl = `https://picsum.photos/v2/list?limit=31`;
+            //referenced from mozilla.org
+            //https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#monitoring_progress
+            // defining the ajax request
+            let xhr = new XMLHttpRequest();
+            // a get request will be sent to api url to get the data
+            xhr.open("GET", apiUrl);
+            // once the request is sent, handleResponse function will handle the response of ajax request
+            xhr.onreadystatechange = handleResponse;
+            // send the request
             xhr.send();
-        }
-        //on click function to download the img link and naming it "desirableimage.jpg"
-        $("#save").click(function () {
-            //adding onto savecount var
-            savecount+=1;
-            Download(document.getElementById("img").src, "desirableimage.jpg");
-            //added jquery string to add "Save Count: " value in html
-            $('#savecount').html("Save Count: "+savecount);
-        });
-
-
-        //script referenced from w3schools
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-
-        
-       
+            function handleResponse() {
+                // once the request is sent we are in this function
+                if (xhr.readyState === xhr.DONE) {
+                    // once the ajax request is completed, we check for status of response
+                    if (xhr.status === 200) {
+                        // if status is 200 that means request was successful
+                        // we convert the response of ajax request to an array so we can loop over it
+                        let response = JSON.parse(xhr.responseText);
+                        galleryContainer.innerHTML = "";
+                        // for every item in the response array, we create an image in gallery container
+                        response.forEach((item) => {
+                            console.log(item.url)
+                            if (item.url.includes("photos")) {
+                                // the source of image comes from the api
+                                galleryContainer.innerHTML += `
+                        <img class="gallery_img" src="${item.download_url}"/>
+                        `;
+                            }
+                        })
+                        // when the images are shown, we can remove the class d-none so the div is also shown
+                        let formContainer = document.querySelector(".form-container");
+                        formContainer.classList.remove("d-none")
+                    }
+                    else {
+                        console.log("there was a problem...")
+                    }
+                }
+            }
+        })
     </script>
-    </body>
+</body>
 
 </html>
